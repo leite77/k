@@ -55,7 +55,7 @@ mt.__namecall = newcclosure(function(self,...)
     return old(self,unpack(args))
 end)
 setreadonly(mt,true)
-Tabs.Features:Toggle({Title = "Anti-Failure",Desc = "Failure? That Never Existed.",Type = "Checkbox",Value = false,Callback = function(v)
+Tabs.Features:Toggle({Title = "Anti-Failure",Desc = "No Failure.",Type = "Checkbox",Value = false,Callback = function(v)
     getgenv().Settings.Anti_Failure = v
     if getgenv().Settings.Method == "Metamethod" then
         enabled = getgenv().Settings.Anti_Failure
@@ -163,7 +163,7 @@ game:GetService("Players").PlayerRemoving:Connect(function(plr)
         cleanup(plr,Elements)
     end
 end)
-Tabs.Features:Toggle({Title = "Beast Role Extension",Desc = "Make The Players Esp Apply A TextLabel To Identify The Beasts Power And Names",Type = "Checkbox",Value = false,Callback = function(state)
+Tabs.Features:Toggle({Title = "Beast Role Extension",Desc = "You Can See Beast's Ability On Esp",Type = "Checkbox",Value = false,Callback = function(state)
     extension = state
     if getgenv().Settings.Esp.Players then
         local Elements = getgenv().Settings.Esp.Elements
